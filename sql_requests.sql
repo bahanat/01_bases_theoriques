@@ -50,20 +50,25 @@ CREATE TABLE games_publishers (
     FOREIGN KEY (publisher_id) REFERENCES publishers(id)
 );
 
-CREATE TABLE ranking_type (
+CREATE TABLE ranking_types (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    type_name VARCHAR(100)
+    ranking_type VARCHAR(100)
+);
+
+CREATE TABLE ranking_genres (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    ranking_genre VARCHAR(100)
 );
 
 CREATE TABLE rankings (
     game_id INT NOT NULL,
-    genre_id INT NOT NULL,
+    ranking_genre_id INT NOT NULL,
     ranking_type_id INT NOT NULL,
     ranking INT,
-    PRIMARY KEY (game_id, genre_id, ranking_type_id),
+    PRIMARY KEY (game_id, ranking_genre_id, ranking_type_id),
     FOREIGN KEY (game_id) REFERENCES games(id),
-    FOREIGN KEY (genre_id) REFERENCES genres(id),
-    FOREIGN KEY (ranking_type_id) REFERENCES ranking_type(id)
+    FOREIGN KEY (ranking_genre_id) REFERENCES ranking_genres(id),
+    FOREIGN KEY (ranking_type_id) REFERENCES ranking_types(id)
 );
 
 CREATE TABLE users (
