@@ -24,8 +24,11 @@ project/
 │   ├── insertion_reviews.ipynb
 │   └── insertion_users.ipynb
 │
+├── sql_requests/                           # Requêtes SQL (livrables du brief)
+│   ├── tables_creation.sql
+│   └── test_insertions_and_updates.sql
+│
 ├── .gitignore
 ├── LICENSE
-├── README.md
-└── sql_requests.sql
+└── README.md
 ```
